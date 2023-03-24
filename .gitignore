@@ -1,2 +1,5 @@
-# Godot 4+ specific ignores
-.godot/
+# macOS
+*.DS_Store
+
+# Godot
+*.godot/
