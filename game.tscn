@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://p60quupdc4ch"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri1t3"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap3o6"]
+bg_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rxps"]
+bg_color = Color(0.607843, 0.607843, 0.607843, 1)
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ri1t3")
+
+[node name="Margins" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Rows" type="VBoxContainer" parent="Background/Margins"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Info" type="PanelContainer" parent="Background/Margins/Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ap3o6")
+
+[node name="Input" type="PanelContainer" parent="Background/Margins/Rows"]
+custom_minimum_size = Vector2(2.08165e-12, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5rxps")
