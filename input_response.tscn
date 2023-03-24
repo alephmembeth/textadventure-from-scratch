@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2t07w1xpb3as"]
+
+[ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_rgfur"]
+
+[node name="input_response" type="VBoxContainer"]
+
+[node name="input_history" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.705882, 0.705882, 0.705882, 1)
+theme_override_fonts/font = ExtResource("1_rgfur")
+theme_override_font_sizes/font_size = 20
+
+[node name="response" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rgfur")

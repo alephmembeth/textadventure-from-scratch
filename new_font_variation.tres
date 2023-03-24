@@ -1,6 +1,0 @@
-[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://qag1v21gxevw"]
-
-[ext_resource type="FontFile" uid="uid://xote3fyjgtdo" path="res://fonts/cormorant_garamond_regular.ttf" id="1_2mwc7"]
-
-[resource]
-base_font = ExtResource("1_2mwc7")
