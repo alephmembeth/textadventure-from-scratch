@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2t07w1xpb3as"]
+[gd_scene load_steps=3 format=3 uid="uid://d2t07w1xpb3as"]
 
+[ext_resource type="Script" path="res://input_response.gd" id="1_pod1b"]
 [ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_rgfur"]
 
 [node name="input_response" type="VBoxContainer"]
+script = ExtResource("1_pod1b")
 
 [node name="input_history" type="Label" parent="."]
 layout_mode = 2
@@ -13,3 +15,4 @@ theme_override_font_sizes/font_size = 20
 [node name="response" type="Label" parent="."]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rgfur")
+theme_override_font_sizes/font_size = 35
