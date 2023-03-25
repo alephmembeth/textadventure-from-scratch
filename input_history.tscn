@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://n73bh1yo7omh"]
+
+[ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_ggmar"]
+
+[node name="input_history" type="Label"]
+theme_override_colors/font_color = Color(0.705882, 0.705882, 0.705882, 1)
+theme_override_fonts/font = ExtResource("1_ggmar")
+theme_override_font_sizes/font_size = 30

@@ -1,18 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2t07w1xpb3as"]
+[gd_scene load_steps=4 format=3 uid="uid://d2t07w1xpb3as"]
 
 [ext_resource type="Script" path="res://input_response.gd" id="1_pod1b"]
-[ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_rgfur"]
+[ext_resource type="PackedScene" uid="uid://n73bh1yo7omh" path="res://input_history.tscn" id="2_pirlt"]
+[ext_resource type="PackedScene" uid="uid://cu3cyma3vqa83" path="res://response.tscn" id="3_kpc6o"]
 
 [node name="input_response" type="VBoxContainer"]
 script = ExtResource("1_pod1b")
 
-[node name="input_history" type="Label" parent="."]
+[node name="input_history" parent="." instance=ExtResource("2_pirlt")]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.705882, 0.705882, 0.705882, 1)
-theme_override_fonts/font = ExtResource("1_rgfur")
-theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
 
-[node name="response" type="Label" parent="."]
+[node name="response" parent="." instance=ExtResource("3_kpc6o")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_rgfur")
-theme_override_font_sizes/font_size = 35

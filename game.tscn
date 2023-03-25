@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://p60quupdc4ch"]
+[gd_scene load_steps=10 format=3 uid="uid://p60quupdc4ch"]
 
 [ext_resource type="Script" path="res://input_line.gd" id="1_33s3s"]
 [ext_resource type="Script" path="res://game.gd" id="1_vjsim"]
 [ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_xs2cr"]
+[ext_resource type="Script" path="res://parser.gd" id="2_uctwy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri1t3"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
@@ -25,6 +26,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vjsim")
+
+[node name="parser" type="Node" parent="."]
+script = ExtResource("2_uctwy")
 
 [node name="background" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -57,6 +61,8 @@ horizontal_scroll_mode = 0
 
 [node name="history" type="VBoxContainer" parent="background/margins/rows/info_panel/scroll"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 20
 
 [node name="input_panel" type="PanelContainer" parent="background/margins/rows"]
