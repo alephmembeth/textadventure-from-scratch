@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://p60quupdc4ch"]
+[gd_scene load_steps=11 format=3 uid="uid://p60quupdc4ch"]
 
 [ext_resource type="Script" path="res://input_line.gd" id="1_33s3s"]
 [ext_resource type="Script" path="res://game.gd" id="1_vjsim"]
 [ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_xs2cr"]
 [ext_resource type="Script" path="res://parser.gd" id="2_uctwy"]
+[ext_resource type="PackedScene" uid="uid://dkyrk54w0wb1h" path="res://area.tscn" id="3_ivh7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri1t3"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
@@ -30,7 +31,13 @@ script = ExtResource("1_vjsim")
 [node name="parser" type="Node" parent="."]
 script = ExtResource("2_uctwy")
 
-[node name="background" type="PanelContainer" parent="."]
+[node name="area_manager" type="Node" parent="."]
+
+[node name="area" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_top = -279.0
+offset_bottom = -79.0
+
+[node name="interface" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,47 +46,47 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ri1t3")
 
-[node name="margins" type="MarginContainer" parent="background"]
+[node name="margins" type="MarginContainer" parent="interface"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="rows" type="VBoxContainer" parent="background/margins"]
+[node name="rows" type="VBoxContainer" parent="interface/margins"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="info_panel" type="PanelContainer" parent="background/margins/rows"]
+[node name="info_panel" type="PanelContainer" parent="interface/margins/rows"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ap3o6")
 
-[node name="scroll" type="ScrollContainer" parent="background/margins/rows/info_panel"]
+[node name="scroll" type="ScrollContainer" parent="interface/margins/rows/info_panel"]
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="history" type="VBoxContainer" parent="background/margins/rows/info_panel/scroll"]
+[node name="history" type="VBoxContainer" parent="interface/margins/rows/info_panel/scroll"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="input_panel" type="PanelContainer" parent="background/margins/rows"]
+[node name="input_panel" type="PanelContainer" parent="interface/margins/rows"]
 custom_minimum_size = Vector2(2.08165e-12, 60)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5rxps")
 
-[node name="caret_space" type="HBoxContainer" parent="background/margins/rows/input_panel"]
+[node name="caret_space" type="HBoxContainer" parent="interface/margins/rows/input_panel"]
 layout_mode = 2
 
-[node name="caret" type="Label" parent="background/margins/rows/input_panel/caret_space"]
+[node name="caret" type="Label" parent="interface/margins/rows/input_panel/caret_space"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xs2cr")
 theme_override_font_sizes/font_size = 33
 text = " > "
 
-[node name="input_line" type="LineEdit" parent="background/margins/rows/input_panel/caret_space"]
+[node name="input_line" type="LineEdit" parent="interface/margins/rows/input_panel/caret_space"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_xs2cr")
@@ -89,5 +96,5 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_12o73")
 max_length = 42
 script = ExtResource("1_33s3s")
 
-[connection signal="text_submitted" from="background/margins/rows/input_panel/caret_space/input_line" to="." method="_on_input_line_text_submitted"]
-[connection signal="text_submitted" from="background/margins/rows/input_panel/caret_space/input_line" to="background/margins/rows/input_panel/caret_space/input_line" method="_on_text_submitted"]
+[connection signal="text_submitted" from="interface/margins/rows/input_panel/caret_space/input_line" to="." method="_on_input_line_text_submitted"]
+[connection signal="text_submitted" from="interface/margins/rows/input_panel/caret_space/input_line" to="interface/margins/rows/input_panel/caret_space/input_line" method="_on_text_submitted"]
