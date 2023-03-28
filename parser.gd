@@ -36,7 +36,7 @@ func go(second_word: String) -> String:
 
 
 func help() -> String:
-	return "You can use these commands: 'go [location], 'help'."
+	return "You can use these commands: 'go [location]', 'help'."
 
 
 func change_area(new_area: area):
