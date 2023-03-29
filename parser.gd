@@ -31,19 +31,26 @@ func process_command(input: String) -> String:
 func go(second_word: String) -> String:
 	if second_word == "":
 		return "Go where?"
-	
-	return "You go %s." % second_word
+		
+	if current_area.exits.keys().has(second_word):
+		change_area(current_area.exits[second_word])
+		return "You go %s." % second_word
+	else:
+		return "There is no exit in this direction."
 
 
 func help() -> String:
 	return "You can use these commands: 'go [location]', 'help'."
 
 
-func change_area(new_area: area):
+func change_area(new_area: Area):
 	current_area = new_area
-	var string_array = PackedStringArray([
-		"You are currently in", new_area.area_name,
-		"Exits: "
+	var exit_info_string = PackedStringArray(new_area.exits.keys())
+	var exit_info = " ".join(exit_info_string)
+
+	var area_info_string = PackedStringArray([
+		"You are currently " + new_area.area_name + ". It is " + new_area.area_description,
+		"Exits: " + exit_info
 	])
-	var strings = "\n".join(string_array)
-	emit_signal("response_generated", strings)
+	var area_info = "\n".join(area_info_string)
+	emit_signal("response_generated", area_info)
