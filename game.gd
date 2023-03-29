@@ -18,10 +18,10 @@ func _ready() -> void:
 	scrollbar.changed.connect(handle_scrollbar_changed)
 	max_scroll_length = scrollbar.max_value
 	
-	handle_response_generated("Welcome to the text adventure!")
+	create_response("Welcome to the text adventure!")
 	
-	parser.response_generated.connect(handle_response_generated)
-	parser.initialize(area_manager.get_child(0))
+	var starting_area_response = parser.initialize(area_manager.get_child(0))
+	create_response(starting_area_response)
 
 
 func handle_scrollbar_changed():
@@ -40,7 +40,7 @@ func _on_input_line_text_submitted(new_text: String) -> void:
 	add_response(input_response)
 
 
-func handle_response_generated(response_text: String):
+func create_response(response_text: String):
 	var response = Response.instantiate()
 	response.text = response_text
 	add_response(response)

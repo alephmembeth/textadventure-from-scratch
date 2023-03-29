@@ -1,12 +1,10 @@
 extends Node
 
-signal response_generated(response_text)
-
 var current_area = null
 
 
-func initialize(starting_area):
-	change_area(starting_area)
+func initialize(starting_area) -> String:
+	return change_area(starting_area)
 
 
 func process_command(input: String) -> String:
@@ -33,8 +31,10 @@ func go(second_word: String) -> String:
 		return "Go where?"
 		
 	if current_area.exits.keys().has(second_word):
-		change_area(current_area.exits[second_word])
-		return "You go %s." % second_word
+		var change_response = change_area(current_area.exits[second_word])
+		var change_info_string = PackedStringArray(["You go %s." % second_word, change_response])
+		var change_info = "\n".join(change_info_string)
+		return change_info
 	else:
 		return "There is no exit in this direction."
 
@@ -43,7 +43,7 @@ func help() -> String:
 	return "You can use these commands: 'go [location]', 'help'."
 
 
-func change_area(new_area: Area):
+func change_area(new_area: Area) -> String:
 	current_area = new_area
 	var exit_info_string = PackedStringArray(new_area.exits.keys())
 	var exit_info = " ".join(exit_info_string)
@@ -53,4 +53,4 @@ func change_area(new_area: Area):
 		"Exits: " + exit_info
 	])
 	var area_info = "\n".join(area_info_string)
-	emit_signal("response_generated", area_info)
+	return area_info
