@@ -14,3 +14,7 @@ config/name="textadventure-from-scratch"
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Types="*res://globals/types.gd"
