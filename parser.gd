@@ -31,7 +31,8 @@ func go(second_word: String) -> String:
 		return "Go where?"
 		
 	if current_area.exits.keys().has(second_word):
-		var change_response = change_area(current_area.exits[second_word])
+		var exit = current_area.exits[second_word]
+		var change_response = change_area(exit.get_other_area(current_area))
 		var change_info_string = PackedStringArray(["You go %s." % second_word, change_response])
 		var change_info = "\n".join(change_info_string)
 		return change_info

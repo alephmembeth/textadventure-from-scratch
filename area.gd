@@ -20,18 +20,23 @@ func set_area_description(new_area_description: String):
 
 
 func connect_exits(direction: String, area: Area):
+	var exit = Exits.new()
+	exit.area_1 = self
+	exit.area_2 = area
+	exits[direction] = exit
+	
 	match direction:
 		"north":
-			exits[direction] = area
-			area.exits["south"] = self
+			area.exits["south"] = exit
 		"east":
-			exits[direction] = area
-			area.exits["west"] = self
+			area.exits["west"] = exit
 		"south":
-			exits[direction] = area
-			area.exits["north"] = self
+			area.exits["north"] = exit
 		"west":
-			exits[direction] = area
-			area.exits["east"] = self
+			area.exits["east"] = exit
+		"up":
+			area.exits["down"] = exit
+		"down":
+			area.exits["up"] = exit
 		_:
 			printerr("Tried to connect invalid direction: %s", direction)
