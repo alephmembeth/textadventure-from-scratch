@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://p60quupdc4ch"]
+[gd_scene load_steps=12 format=3 uid="uid://ccka0y7q5cqiw"]
 
-[ext_resource type="Script" path="res://input_line.gd" id="1_33s3s"]
 [ext_resource type="Script" path="res://game.gd" id="1_vjsim"]
 [ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_xs2cr"]
 [ext_resource type="Script" path="res://parser.gd" id="2_uctwy"]
-[ext_resource type="Script" path="res://area_manager.gd" id="3_526x0"]
-[ext_resource type="PackedScene" uid="uid://dkyrk54w0wb1h" path="res://area.tscn" id="3_ivh7q"]
+[ext_resource type="Script" path="res://areas/area_manager.gd" id="3_bt8o5"]
+[ext_resource type="PackedScene" uid="uid://dkdert4e57o2t" path="res://areas/area.tscn" id="3_ivh7q"]
+[ext_resource type="Script" path="res://inputs/input_line.gd" id="6_4pary"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri1t3"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
@@ -33,7 +33,7 @@ script = ExtResource("1_vjsim")
 script = ExtResource("2_uctwy")
 
 [node name="area_manager" type="Node" parent="."]
-script = ExtResource("3_526x0")
+script = ExtResource("3_bt8o5")
 
 [node name="inside" parent="area_manager" instance=ExtResource("3_ivh7q")]
 offset_top = -279.0
@@ -106,7 +106,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lb8x2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_12o73")
 max_length = 42
-script = ExtResource("1_33s3s")
+script = ExtResource("6_4pary")
 
 [connection signal="text_submitted" from="interface/margins/rows/input_panel/caret_space/input_line" to="." method="_on_input_line_text_submitted"]
 [connection signal="text_submitted" from="interface/margins/rows/input_panel/caret_space/input_line" to="interface/margins/rows/input_panel/caret_space/input_line" method="_on_text_submitted"]

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu3cyma3vqa83"]
-
-[ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_csvld"]
-
-[node name="response" type="Label"]
-theme_override_fonts/font = ExtResource("1_csvld")
-theme_override_font_sizes/font_size = 35
-autowrap_mode = 2

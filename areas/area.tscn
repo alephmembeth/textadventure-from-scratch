@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkyrk54w0wb1h"]
+[gd_scene load_steps=3 format=3 uid="uid://dkdert4e57o2t"]
 
-[ext_resource type="Script" path="res://area.gd" id="1_agouf"]
+[ext_resource type="Script" path="res://areas/area.gd" id="1_k54oo"]
 [ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_sf75f"]
 
 [node name="area" type="PanelContainer"]
 custom_minimum_size = Vector2(250, 200)
 offset_right = 250.0
 offset_bottom = 200.0
-script = ExtResource("1_agouf")
+script = ExtResource("1_k54oo")
 
 [node name="margins" type="MarginContainer" parent="."]
 layout_mode = 2

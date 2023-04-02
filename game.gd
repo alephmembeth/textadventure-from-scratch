@@ -1,7 +1,7 @@
 extends Control
 
-const Response = preload("res://response.tscn")
-const InputResponse = preload("res://input_response.tscn")
+const Response = preload("res://inputs/response.tscn")
+const InputResponse = preload("res://inputs/input_response.tscn")
 
 var max_scroll_length := 0
 
