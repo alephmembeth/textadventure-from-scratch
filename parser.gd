@@ -1,9 +1,11 @@
 extends Node
 
 var current_area = null
+var player = null
 
 
-func initialize(starting_area) -> String:
+func initialize(starting_area, player) -> String:
+	self.player = player
 	return change_area(starting_area)
 
 
@@ -20,6 +22,8 @@ func process_command(input: String) -> String:
 	match first_word:
 		"go":
 			return go(second_word)
+		"take":
+			return take(second_word)
 		"help":
 			return help()
 		_:
@@ -37,11 +41,24 @@ func go(second_word: String) -> String:
 		var change_info = "\n".join(change_info_string)
 		return change_info
 	else:
-		return "There is no exit in this direction."
+		return "You can't go to %s." % second_word
+
+
+func take(second_word: String) -> String:
+	if second_word == "":
+		return "Take what?"
+	
+	for item in current_area.items:
+		if second_word.to_lower() == item.item_name.to_lower():
+			current_area.remove_item(item)
+			player.take_item(item)
+			return "You take the " + item.item_name
+	
+	return "You can't take %s." % second_word
 
 
 func help() -> String:
-	return "You can use these commands: 'go [exit]', 'help'."
+	return "You can use these commands: 'go [exit]', 'take [item]', 'help'."
 
 
 func change_area(new_area: Area) -> String:

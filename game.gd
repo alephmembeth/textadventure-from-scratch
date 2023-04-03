@@ -12,6 +12,7 @@ var max_scroll_length := 0
 @onready var scroll = $interface/margins/rows/info_panel/scroll
 @onready var scrollbar = scroll.get_v_scroll_bar()
 @onready var area_manager = $area_manager
+@onready var player = $player
 
 
 func _ready() -> void:
@@ -20,7 +21,7 @@ func _ready() -> void:
 	
 	create_response("Welcome to the text adventure!")
 	
-	var starting_area_response = parser.initialize(area_manager.get_child(0))
+	var starting_area_response = parser.initialize(area_manager.get_child(0), player)
 	create_response(starting_area_response)
 
 

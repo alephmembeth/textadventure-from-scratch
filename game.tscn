@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccka0y7q5cqiw"]
+[gd_scene load_steps=13 format=3 uid="uid://ccka0y7q5cqiw"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_vjsim"]
 [ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_xs2cr"]
+[ext_resource type="Script" path="res://player.gd" id="2_ghc7u"]
 [ext_resource type="Script" path="res://parser.gd" id="2_uctwy"]
 [ext_resource type="Script" path="res://areas/area_manager.gd" id="3_bt8o5"]
 [ext_resource type="PackedScene" uid="uid://dkdert4e57o2t" path="res://areas/area.tscn" id="3_ivh7q"]
@@ -28,6 +29,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vjsim")
+
+[node name="player" type="Node" parent="."]
+script = ExtResource("2_ghc7u")
 
 [node name="parser" type="Node" parent="."]
 script = ExtResource("2_uctwy")
