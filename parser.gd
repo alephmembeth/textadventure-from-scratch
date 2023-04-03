@@ -24,6 +24,8 @@ func process_command(input: String) -> String:
 			return go(second_word)
 		"take":
 			return take(second_word)
+		"inventory":
+			return inventory()
 		"help":
 			return help()
 		_:
@@ -57,8 +59,12 @@ func take(second_word: String) -> String:
 	return "You can't take %s." % second_word
 
 
+func inventory() -> String:
+	return player.get_inventory_description()
+
+
 func help() -> String:
-	return "You can use these commands: 'go [exit]', 'take [item]', 'help'."
+	return "You can use these commands: 'go [exit]', 'take [item]', 'inventory', 'help'."
 
 
 func change_area(new_area: Area) -> String:
