@@ -53,6 +53,22 @@ offset_bottom = -79.0
 area_name = "outside a house"
 area_description = "outside of a house."
 
+[node name="shed" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 591.0
+offset_top = -276.0
+offset_right = 841.0
+offset_bottom = -76.0
+area_name = "a shed"
+area_description = "a small shed."
+
+[node name="street" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 296.0
+offset_top = -520.0
+offset_right = 546.0
+offset_bottom = -320.0
+area_name = "street"
+area_description = "a dirty old street in the middle of nowhere."
+
 [node name="interface" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15

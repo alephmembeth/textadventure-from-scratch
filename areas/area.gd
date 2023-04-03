@@ -58,10 +58,19 @@ func get_exit_description() -> String:
 	return "Exits: " + exit_description
 
 
-func connect_exits(direction: String, area: Area):
+func connect_exits_unlocked(direction: String, area: Area):
+	_connect_exits(direction, area, false)
+
+
+func connect_exits_locked(direction: String, area: Area):
+	_connect_exits(direction, area, true)
+
+
+func _connect_exits(direction: String, area: Area, is_locked: bool = false):
 	var exit = Exits.new()
 	exit.area_1 = self
 	exit.area_2 = area
+	exit.area_2_is_locked = is_locked
 	exits[direction] = exit
 	
 	match direction:

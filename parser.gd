@@ -40,6 +40,8 @@ func go(second_word: String) -> String:
 	
 	if current_area.exits.keys().has(second_word):
 		var exit = current_area.exits[second_word]
+		if exit.is_other_area_locked(current_area):
+			return "You can't go to %s. It is locked." % second_word
 		var change_response = change_area(exit.get_other_area(current_area))
 		var change_info_string = PackedStringArray(["You go %s." % second_word, change_response])
 		var change_info = "\n".join(change_info_string)
