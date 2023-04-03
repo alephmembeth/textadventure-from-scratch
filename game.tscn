@@ -40,32 +40,32 @@ script = ExtResource("2_uctwy")
 script = ExtResource("3_bt8o5")
 
 [node name="inside" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_top = -279.0
-offset_bottom = -79.0
+offset_top = -300.0
+offset_bottom = -100.0
 area_name = "inside a house"
 area_description = "inside of a house."
 
 [node name="outside" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 294.0
-offset_top = -279.0
-offset_right = 544.0
-offset_bottom = -79.0
+offset_left = 350.0
+offset_top = -300.0
+offset_right = 600.0
+offset_bottom = -100.0
 area_name = "outside a house"
 area_description = "outside of a house."
 
 [node name="shed" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 591.0
-offset_top = -276.0
-offset_right = 841.0
-offset_bottom = -76.0
+offset_left = 700.0
+offset_top = -300.0
+offset_right = 950.0
+offset_bottom = -100.0
 area_name = "a shed"
 area_description = "a small shed."
 
 [node name="street" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 296.0
-offset_top = -520.0
-offset_right = 546.0
-offset_bottom = -320.0
+offset_left = 350.0
+offset_top = -600.0
+offset_right = 600.0
+offset_bottom = -400.0
 area_name = "street"
 area_description = "a dirty old street in the middle of nowhere."
 
