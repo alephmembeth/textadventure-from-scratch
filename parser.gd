@@ -30,6 +30,8 @@ func process_command(input: String) -> String:
 			return inventory()
 		"help":
 			return help()
+		"use":
+			return use(second_word)
 		_:
 			return "I don't understand that."
 
@@ -80,8 +82,28 @@ func inventory() -> String:
 	return player.get_inventory_description()
 
 
+func use(second_word: String) -> String:
+	if second_word == "":
+		return "Use what?"
+	
+	for item in player.inventory:
+		if second_word.to_lower() == item.item_name.to_lower():
+			match item.item_type:
+				Types.item_types.KEY:
+					for exit in current_area.exits.values():
+						if exit.area_2 == item.use_value:
+							exit.area_2_is_locked = false
+							player.drop_item(item)
+							return "You unlock the door with the %s and can now go to %s." % [item.item_name, exit.area_2.area_name]
+					return "That item does not unlock anything in this room."
+				_:
+					return "Tried to use item with invalid item type."
+	
+	return "You can't use %s." % second_word
+
+
 func help() -> String:
-	return "You can use these commands: go [exit], take [item], drop [item], inventory, help."
+	return "You can use these commands: go [exit], take [item], drop [item], use, inventory, help."
 
 
 func change_area(new_area: Area) -> String:
