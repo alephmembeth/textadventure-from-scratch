@@ -58,33 +58,41 @@ func get_exit_description() -> String:
 	return "Exits: " + exit_description
 
 
-func connect_exits_unlocked(direction: String, area: Area):
-	_connect_exits(direction, area, false)
+func connect_exits_unlocked(direction: String, area: Area, area_2_override = "null"):
+	return _connect_exits(direction, area, false, area_2_override)
 
 
-func connect_exits_locked(direction: String, area: Area):
-	_connect_exits(direction, area, true)
+func connect_exits_locked(direction: String, area: Area, area_2_override = "null"):
+	return _connect_exits(direction, area, true, area_2_override)
 
 
-func _connect_exits(direction: String, area: Area, is_locked: bool = false):
+func _connect_exits(direction: String, area: Area, is_locked: bool = false, area_2_override = "null"):
 	var exit = Exits.new()
 	exit.area_1 = self
 	exit.area_2 = area
-	exit.area_2_is_locked = is_locked
+	exit.area_is_locked = is_locked
 	exits[direction] = exit
 	
-	match direction:
-		"north":
-			area.exits["south"] = exit
-		"east":
-			area.exits["west"] = exit
-		"south":
-			area.exits["north"] = exit
-		"west":
-			area.exits["east"] = exit
-		"up":
-			area.exits["down"] = exit
-		"down":
-			area.exits["up"] = exit
-		_:
-			printerr("Tried to connect invalid direction: %s", direction)
+	if area_2_override != "null":
+		area.exits[area_2_override] = exit
+	else:
+		match direction:
+			"north":
+				area.exits["south"] = exit
+			"east":
+				area.exits["west"] = exit
+			"south":
+				area.exits["north"] = exit
+			"west":
+				area.exits["east"] = exit
+			"up":
+				area.exits["down"] = exit
+			"down":
+				area.exits["up"] = exit
+			"inside":
+				area.exits["outside"] = exit
+			"outside":
+				area.exits["inside"] = exit
+			_:
+				printerr("Tried to connect invalid direction: %s", direction)
+	return exit

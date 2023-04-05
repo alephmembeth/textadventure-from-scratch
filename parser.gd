@@ -42,7 +42,7 @@ func go(second_word: String) -> String:
 	
 	if current_area.exits.keys().has(second_word):
 		var exit = current_area.exits[second_word]
-		if exit.is_other_area_locked(current_area):
+		if exit.area_is_locked:
 			return "You can't go to %s. It is locked." % second_word
 		var change_response = change_area(exit.get_other_area(current_area))
 		var change_info_string = PackedStringArray(["You go %s." % second_word, change_response])
@@ -91,10 +91,10 @@ func use(second_word: String) -> String:
 			match item.item_type:
 				Types.item_types.KEY:
 					for exit in current_area.exits.values():
-						if exit.area_2 == item.use_value:
-							exit.area_2_is_locked = false
+						if exit == item.use_value:
+							exit.area_is_locked = false
 							player.drop_item(item)
-							return "You unlock the door with the %s and can now go to %s." % [item.item_name, exit.area_2.area_name]
+							return "You unlock the door with the %s and can now go to %s." % [item.item_name, exit.get_other_area(current_area).area_name]
 					return "That item does not unlock anything in this room."
 				_:
 					return "Tried to use item with invalid item type."
@@ -103,7 +103,7 @@ func use(second_word: String) -> String:
 
 
 func help() -> String:
-	return "You can use these commands: go [exit], take [item], drop [item], use, inventory, help."
+	return "You can use these commands: go [exit], take [item], drop [item], use [item], inventory, help."
 
 
 func change_area(new_area: Area) -> String:
