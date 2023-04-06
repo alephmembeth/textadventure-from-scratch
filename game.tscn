@@ -39,35 +39,195 @@ script = ExtResource("2_uctwy")
 [node name="area_manager" type="Node" parent="."]
 script = ExtResource("3_bt8o5")
 
-[node name="inside" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_top = -300.0
-offset_bottom = -100.0
-area_name = "inside a house"
-area_description = "inside of a house."
-
-[node name="outside" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 350.0
-offset_top = -300.0
-offset_right = 600.0
-offset_bottom = -100.0
-area_name = "outside a house"
-area_description = "outside of a house."
+[node name="behind_inn" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_top = -299.0
+offset_bottom = -99.0
+area_name = "behind an inn"
+area_description = "lorem ipsum"
 
 [node name="shed" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 700.0
-offset_top = -300.0
-offset_right = 950.0
-offset_bottom = -100.0
+offset_left = 288.0
+offset_top = -299.0
+offset_right = 538.0
+offset_bottom = -99.0
 area_name = "a shed"
-area_description = "a small shed."
+area_description = "lorem ipsum"
 
-[node name="street" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 350.0
-offset_top = -600.0
-offset_right = 600.0
-offset_bottom = -400.0
-area_name = "street"
-area_description = "a dirty old street in the middle of nowhere."
+[node name="city_gate" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = -1181.0
+offset_top = -1590.0
+offset_right = -931.0
+offset_bottom = -1390.0
+area_name = "city gate"
+area_description = "lorem ipsum"
+
+[node name="street_1" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = -878.0
+offset_top = -1474.0
+offset_right = -628.0
+offset_bottom = -1274.0
+area_name = "street 1"
+area_description = "lorem ipsum"
+
+[node name="street_2" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = -579.0
+offset_top = -1479.0
+offset_right = -329.0
+offset_bottom = -1279.0
+area_name = "street 2"
+area_description = "lorem ipsum"
+
+[node name="street_3" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = -289.0
+offset_top = -1478.0
+offset_right = -39.0
+offset_bottom = -1278.0
+area_name = "street 3"
+area_description = "lorem ipsum"
+
+[node name="street_4" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 1.0
+offset_top = -1481.0
+offset_right = 251.0
+offset_bottom = -1281.0
+area_name = "street 4"
+area_description = "lorem ipsum"
+
+[node name="street_5" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 308.0
+offset_top = -1488.0
+offset_right = 558.0
+offset_bottom = -1288.0
+area_name = "street 5"
+area_description = "lorem ipsum"
+
+[node name="street_6" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 638.0
+offset_top = -1490.0
+offset_right = 888.0
+offset_bottom = -1290.0
+area_name = "street 6"
+area_description = "lorem ipsum"
+
+[node name="street_7" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 946.0
+offset_top = -1495.0
+offset_right = 1196.0
+offset_bottom = -1295.0
+area_name = "street 7"
+area_description = "lorem ipsum"
+
+[node name="street_8" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 1284.0
+offset_top = -1432.0
+offset_right = 1534.0
+offset_bottom = -1232.0
+area_name = "street 8"
+area_description = "lorem ipsum"
+
+[node name="inn_door" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 2.0
+offset_top = -1248.0
+offset_right = 252.0
+offset_bottom = -1048.0
+area_name = "inn door"
+area_description = "lorem ipsum"
+
+[node name="taproom" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 1.0
+offset_top = -1015.0
+offset_right = 251.0
+offset_bottom = -815.0
+area_name = "taproom"
+area_description = "lorem ipsum"
+
+[node name="stairs" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 306.0
+offset_top = -1013.0
+offset_right = 556.0
+offset_bottom = -813.0
+area_name = "stairs"
+area_description = "lorem ipsum"
+
+[node name="cellar_door" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 650.0
+offset_top = -1160.0
+offset_right = 900.0
+offset_bottom = -960.0
+area_name = "cellar door"
+area_description = "lorem ipsum"
+
+[node name="cellar" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 936.0
+offset_top = -1168.0
+offset_right = 1186.0
+offset_bottom = -968.0
+area_name = "cellar"
+area_description = "lorem ipsum"
+
+[node name="upstairs_hallway" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 641.0
+offset_top = -912.0
+offset_right = 891.0
+offset_bottom = -712.0
+area_name = "upstairs hallway"
+area_description = "lorem ipsum"
+
+[node name="room_1" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 937.0
+offset_top = -902.0
+offset_right = 1187.0
+offset_bottom = -702.0
+area_name = "room 1"
+area_description = "lorem ipsum"
+
+[node name="room_2" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 939.0
+offset_top = -655.0
+offset_right = 1189.0
+offset_bottom = -455.0
+area_name = "room 2"
+area_description = "lorem ipsum"
+
+[node name="bed" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 1240.0
+offset_top = -657.0
+offset_right = 1490.0
+offset_bottom = -457.0
+area_name = "bed"
+area_description = "lorem ipsum"
+
+[node name="room_3" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 636.0
+offset_top = -661.0
+offset_right = 886.0
+offset_bottom = -461.0
+area_name = "room 3"
+area_description = "lorem ipsum"
+
+[node name="kitchen" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 2.0
+offset_top = -776.0
+offset_right = 252.0
+offset_bottom = -576.0
+area_name = "kitchen"
+area_description = "lorem ipsum"
+
+[node name="pantry" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 306.0
+offset_top = -776.0
+offset_right = 556.0
+offset_bottom = -576.0
+area_name = "pantry"
+area_description = "lorem ipsum"
+
+[node name="backdoor" parent="area_manager" instance=ExtResource("3_ivh7q")]
+offset_left = 1.0
+offset_top = -539.0
+offset_right = 251.0
+offset_bottom = -339.0
+area_name = "backdoor"
+area_description = "lorem ipsum"
 
 [node name="interface" type="PanelContainer" parent="."]
 layout_mode = 1
