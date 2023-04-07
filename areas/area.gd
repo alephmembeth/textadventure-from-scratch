@@ -7,6 +7,7 @@ class_name Area
 @export_multiline var area_description: String = "Description of the area.": set = set_area_description
 
 var exits: Dictionary = {}
+var characters: Array = []
 var items: Array = []
 
 
@@ -20,6 +21,10 @@ func set_area_description(new_area_description: String):
 	area_description = new_area_description
 
 
+func add_character(character: Character):
+	characters.append(character)
+
+
 func add_item(item: Item):
 	items.append(item)
 
@@ -29,22 +34,40 @@ func remove_item(item: Item):
 
 
 func get_full_description() -> String:
-	var area_description_string = PackedStringArray([
-		get_area_description(),
-		get_item_description(),
-		get_exit_description()
-	])
-	var full_description = "\n".join(area_description_string)
-	return full_description
+	var area_description_string = PackedStringArray([get_area_description()])
+	
+	var npc_description_string = get_npc_description()
+	if npc_description_string != "":
+		area_description_string.append(npc_description_string)
+	
+	var item_description_string = get_item_description()
+	if item_description_string != "":
+		area_description_string.append(item_description_string)
+	
+	var exit_description_string = get_exit_description()
+	area_description_string.append(exit_description_string)
+	
+	var full_description_string = "\n".join(area_description_string)
+	return full_description_string
 
 
 func get_area_description() -> String:
-	return "You are currently " + area_name + ". It is " + area_description
+	return "Location: " + area_name + "\n" + area_description
+
+
+func get_npc_description() -> String:
+	if characters.size() == 0:
+		return ""
+	
+	var character_description = ""
+	for character in characters:
+		character_description += character.character_name + " "
+	return "People: " + character_description
 
 
 func get_item_description() -> String:
 	if items.size() == 0:
-		return "Items: There are no items to pick up."
+		return ""
 	
 	var item_description = ""
 	for item in items:

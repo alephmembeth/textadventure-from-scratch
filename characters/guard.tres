@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://cca03vsk18dlt"]
+
+[ext_resource type="Script" path="res://characters/character.gd" id="1_yicgk"]
+
+[resource]
+script = ExtResource("1_yicgk")
+character_name = "guard"
+initial_dialog = "Say, could you help me? I must have lost my sword last night. All I can remember is that I was at the inn down the road. Everything is very blurry, I can hardly remember the evening, let alone the night. But here I am, doing my duty. *hick*"
+follow_up_dialog = "You have found it! Now leave me alone. No, I have no hangover, I just dont like your face. Get lost."

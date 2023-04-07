@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://draqwob7r14qu"]
+
+[ext_resource type="Script" path="res://characters/character.gd" id="1_21kpj"]
+
+[resource]
+script = ExtResource("1_21kpj")
+character_name = "cook"
+initial_dialog = "What are you doin' in my kitchen?"
+follow_up_dialog = ""

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://hd8i0p2mbylt"]
+
+[ext_resource type="Script" path="res://characters/character.gd" id="1_swh6n"]
+
+[resource]
+script = ExtResource("1_swh6n")
+character_name = "innkeeper"
+initial_dialog = "Hello there!"
+follow_up_dialog = ""

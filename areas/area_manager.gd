@@ -2,12 +2,14 @@ extends Node
 
 
 func _ready() -> void:
-	var key = Item.new()
-	key.initialize("key", Types.item_types.KEY)
+	$behind_inn.connect_exits_unlocked("alley", $street_3, "alley")
+	var exit = $behind_inn.connect_exits_locked("shed", $shed, "outside")
+	var key = load_item("key")
+	key.use_value = exit
+	$behind_inn.add_item(key)
 	
-	$behind_inn.connect_exits_unlocked("alley", $street_3)
-	$behind_inn.connect_exits_unlocked("shed", $shed, "outside")
-	
+	var guard = load_character("guard")
+	$city_gate.add_character(guard)
 	$city_gate.connect_exits_unlocked("east", $street_1)
 	
 	$street_1.connect_exits_unlocked("east", $street_2)
@@ -27,6 +29,8 @@ func _ready() -> void:
 	
 	$inn_door.connect_exits_unlocked("inside", $taproom, "outside")
 	
+	var innkeeper = load_character("innkeeper")
+	$taproom.add_character(innkeeper)
 	$taproom.connect_exits_unlocked("stairs", $stairs, "taproom")
 	$taproom.connect_exits_unlocked("kitchen", $kitchen, "taproom")
 	
@@ -39,12 +43,17 @@ func _ready() -> void:
 	$upstairs_hallway.connect_exits_unlocked("center", $room_2, "hallway")
 	$upstairs_hallway.connect_exits_unlocked("right", $room_2, "hallway")
 	
+	var cook = load_character("cook")
+	$kitchen.add_character(cook)
 	$kitchen.connect_exits_unlocked("pantry", $pantry, "kitchen")
 	$kitchen.connect_exits_unlocked("backdoor", $backdoor, "kitchen")
 	
 	$backdoor.connect_exits_unlocked("outside", $behind_inn, "inside")
-	
-	#$behind_inn.add_item(key)
-	#var exit = $behind_inn.connect_exits_locked("east", $shed)
-	#key.use_value = exit
-	#$behind_inn.connect_exits_unlocked("north", $street)
+
+
+func load_item(item_name: String):
+	return load("res://items/" + item_name + ".tres")
+
+
+func load_character(character_name: String):
+	return load("res://characters/" + character_name + ".tres")
