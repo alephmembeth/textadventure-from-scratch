@@ -3,12 +3,14 @@ extends Node
 
 func _ready() -> void:
 	$behind_inn.connect_exits_unlocked("alley", $street_3, "alley")
-	var exit = $behind_inn.connect_exits_locked("shed", $shed, "outside")
-	var key = load_item("key")
-	key.use_value = exit
-	$behind_inn.add_item(key)
+	var exit_shed = $behind_inn.connect_exits_locked("shed", $shed, "outside")
+	
+	var sword = load_item("guard_sword")
+	$shed.add_item(sword)
 	
 	var guard = load_character("guard")
+	var backdoor_key = load_item("backdoor_key")
+	guard.quest_reward = backdoor_key
 	$city_gate.add_character(guard)
 	$city_gate.connect_exits_unlocked("east", $street_1)
 	
@@ -48,7 +50,13 @@ func _ready() -> void:
 	$kitchen.connect_exits_unlocked("pantry", $pantry, "kitchen")
 	$kitchen.connect_exits_unlocked("backdoor", $backdoor, "kitchen")
 	
-	$backdoor.connect_exits_unlocked("outside", $behind_inn, "inside")
+	var shedkey = load_item("shed_key")
+	shedkey.use_value = exit_shed
+	$pantry.add_item(shedkey)
+	
+	var exit_backdoor = $backdoor.connect_exits_locked("outside", $behind_inn, "inside")
+	var backdoorkey = load_item("backdoor_key")
+	backdoorkey.use_value = exit_backdoor
 
 
 func load_item(item_name: String):

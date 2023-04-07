@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c71dsnn120jb2"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_prdf6"]
+
+[resource]
+script = ExtResource("1_prdf6")
+item_name = "backdoorkey"
+item_type = 0

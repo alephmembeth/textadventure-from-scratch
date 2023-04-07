@@ -30,6 +30,8 @@ func process_command(input: String) -> String:
 			return inventory()
 		"use":
 			return use(second_word)
+		"give":
+			return give(second_word)
 		"talk":
 			return talk(second_word)
 		"help":
@@ -104,19 +106,53 @@ func use(second_word: String) -> String:
 	return "You can't use %s." % second_word
 
 
+func give(second_word: String) -> String:
+	if second_word == "":
+		return "Give what?"
+	
+	var has_item := false
+	for item in player.inventory:
+		if second_word.to_lower() == item.item_name.to_lower():
+			has_item = true
+	
+	if not has_item:
+		return "You don't have %s." % second_word
+	
+	for character in current_area.characters:
+		if character.quest_item != null and second_word.to_lower() == character.quest_item.item_name.to_lower():
+			character.has_received_quest_item = true
+			for item in player.inventory:
+				if second_word.to_lower() == item.item_name.to_lower():
+					player.drop_item(item)
+			
+			if character.quest_reward != null:
+				var reward = character.quest_reward
+				if "is_locked" in reward:
+					reward.is_locked = false
+				elif "key" in reward:
+					player.take_item(reward)
+				else:
+					printerr("Quest reward is not defined.")
+			
+			return "You give %s to the %s." % [second_word, character.character_name]
+	
+	return "You can't give %s." % second_word
+
+
 func talk(second_word: String) -> String:
 	if second_word == "":
 		return "Talk with whom?"
 	
 	for character in current_area.characters:
 		if character.character_name.to_lower() == second_word:
-			return character.character_name + ": \"" + character.initial_dialog + "\""
+			var dialog = character.follow_up_dialog if character.has_received_quest_item else character.initial_dialog
+			return character.character_name + ": \"" + dialog + "\""
 	
 	return "You can't talk with %s." % second_word
 
 
 func help() -> String:
-	return "You can use these commands: go [exit], take [item], drop [item], use [item], talk [character], inventory, help."
+	return "You can use these commands: go [exit], take [item], drop [item], use [item], give [item], talk [character], inventory, help."
 
 
 func change_area(new_area: Area) -> String:
