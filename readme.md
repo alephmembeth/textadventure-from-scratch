@@ -8,5 +8,5 @@ Following the tutorial, the below-listed features are currently implemented:
 - [x] move between areas with a `go` command
 - [x] handle items with `take`, `drop`, and `inventory` commands
 - [x] prevent player from entering locked areas
-- [x] use an item to unlock a locked area with a `use` command
-- [x] talk to a character with a `talk` command
+- [x] use items to unlock locked areas with a `use` command
+- [x] talk to characters with a `talk` command
