@@ -28,10 +28,12 @@ func process_command(input: String) -> String:
 			return drop(second_word)
 		"inventory":
 			return inventory()
-		"help":
-			return help()
 		"use":
 			return use(second_word)
+		"talk":
+			return talk(second_word)
+		"help":
+			return help()
 		_:
 			return "I don't understand that."
 
@@ -102,8 +104,19 @@ func use(second_word: String) -> String:
 	return "You can't use %s." % second_word
 
 
+func talk(second_word: String) -> String:
+	if second_word == "":
+		return "Talk with whom?"
+	
+	for character in current_area.characters:
+		if character.character_name.to_lower() == second_word:
+			return character.character_name + ": \"" + character.initial_dialog + "\""
+	
+	return "You can't talk with %s." % second_word
+
+
 func help() -> String:
-	return "You can use these commands: go [exit], take [item], drop [item], use [item], inventory, help."
+	return "You can use these commands: go [exit], take [item], drop [item], use [item], talk [character], inventory, help."
 
 
 func change_area(new_area: Area) -> String:
