@@ -1,6 +1,5 @@
 extends PanelContainer
 
-const Response = preload("res://inputs/response.tscn")
 const InputResponse = preload("res://inputs/input_response.tscn")
 
 var max_scroll_length := 0
@@ -17,15 +16,15 @@ func _ready() -> void:
 
 
 func create_response(response_text: String):
-	var response = Response.instantiate()
-	response.text = response_text
+	var response = InputResponse.instantiate()
 	_add_response(response)
+	response.set_text(response_text)
 
 
 func create_response_with_input(response_text: String, input_text: String):
 	var input_response = InputResponse.instantiate()
-	input_response.set_text(input_text, response_text)
 	_add_response(input_response)
+	input_response.set_text(response_text, input_text)
 
 
 func _handle_scrollbar_changed():
