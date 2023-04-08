@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqbuedbgj6pit"]
+
+[ext_resource type="StyleBox" uid="uid://dxt1idi52a46f" path="res://main_panel.tres" id="1_swmjg"]
+[ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="2_5ub14"]
+[ext_resource type="Script" path="res://side_panel.gd" id="2_d4vln"]
+
+[node name="side_panel" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+offset_right = 250.0
+offset_bottom = 645.0
+theme_override_styles/panel = ExtResource("1_swmjg")
+script = ExtResource("2_d4vln")
+
+[node name="margins" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="rows" type="VBoxContainer" parent="margins"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="area_label" type="RichTextLabel" parent="margins/rows"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_5ub14")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Location:
+Location"
+fit_content = true
+
+[node name="exits_label" type="RichTextLabel" parent="margins/rows"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_5ub14")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Exits:
+Exits"
+fit_content = true
+
+[node name="characters_label" type="RichTextLabel" parent="margins/rows"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_5ub14")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Characters:
+Characters"
+fit_content = true
+
+[node name="items_label" type="RichTextLabel" parent="margins/rows"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_5ub14")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Items:
+Items"
+fit_content = true

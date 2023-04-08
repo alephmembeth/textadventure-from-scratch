@@ -1,5 +1,7 @@
 extends Node
 
+signal area_changed(new_room)
+
 var current_area = null
 var player = null
 
@@ -49,11 +51,11 @@ func go(second_word: String) -> String:
 		if exit.area_is_locked:
 			return "You can't go to " + Types.wrap_area_text(second_word) + ". It is locked."
 		var change_response = change_area(exit.get_other_area(current_area))
-		var change_info_string = PackedStringArray(["You go to " + Types.wrap_area_text(second_word), change_response])
+		var change_info_string = PackedStringArray(["You go to " + Types.wrap_area_text(second_word) + ".", change_response])
 		var change_info = "\n".join(change_info_string)
 		return change_info
 	else:
-		return "You can't go to " + Types.wrap_area_text(second_word)
+		return "You can't go to " + Types.wrap_area_text(second_word) + "."
 
 
 func take(second_word: String) -> String:
@@ -136,7 +138,7 @@ func give(second_word: String) -> String:
 			
 			return "You give the " + Types.wrap_item_text(second_word) + " to the " + Types.wrap_character_text(character.character_name) + "."
 	
-	return "You can't give the " + Types.wrap_item_text(second_word)
+	return "You can't give the " + Types.wrap_item_text(second_word) + "."
 
 
 func talk(second_word: String) -> String:
@@ -168,4 +170,5 @@ func help() -> String:
 
 func change_area(new_area: Area) -> String:
 	current_area = new_area
+	emit_signal("area_changed", new_area)
 	return new_area.get_full_description()

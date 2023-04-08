@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccka0y7q5cqiw"]
+[gd_scene load_steps=14 format=3 uid="uid://ccka0y7q5cqiw"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_vjsim"]
 [ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_xs2cr"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dkdert4e57o2t" path="res://areas/area.tscn" id="3_ivh7q"]
 [ext_resource type="Script" path="res://inputs/input_line.gd" id="6_4pary"]
 [ext_resource type="PackedScene" uid="uid://dpfj1p6jarjv2" path="res://info_panel.tscn" id="6_5aepp"]
+[ext_resource type="PackedScene" uid="uid://cqbuedbgj6pit" path="res://side_panel.tscn" id="9_fwmns"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri1t3"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
@@ -239,28 +240,33 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="rows" type="VBoxContainer" parent="interface/margins"]
+[node name="columns" type="HBoxContainer" parent="interface/margins"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="info_panel" parent="interface/margins/rows" instance=ExtResource("6_5aepp")]
+[node name="rows" type="VBoxContainer" parent="interface/margins/columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="info_panel" parent="interface/margins/columns/rows" instance=ExtResource("6_5aepp")]
 layout_mode = 2
 
-[node name="input_panel" type="PanelContainer" parent="interface/margins/rows"]
+[node name="input_panel" type="PanelContainer" parent="interface/margins/columns/rows"]
 custom_minimum_size = Vector2(2.08165e-12, 60)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5rxps")
 
-[node name="caret_space" type="HBoxContainer" parent="interface/margins/rows/input_panel"]
+[node name="caret_space" type="HBoxContainer" parent="interface/margins/columns/rows/input_panel"]
 layout_mode = 2
 
-[node name="caret" type="Label" parent="interface/margins/rows/input_panel/caret_space"]
+[node name="caret" type="Label" parent="interface/margins/columns/rows/input_panel/caret_space"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xs2cr")
 theme_override_font_sizes/font_size = 33
 text = " > "
 
-[node name="input_line" type="LineEdit" parent="interface/margins/rows/input_panel/caret_space"]
+[node name="input_line" type="LineEdit" parent="interface/margins/columns/rows/input_panel/caret_space"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_xs2cr")
@@ -270,5 +276,8 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_12o73")
 max_length = 42
 script = ExtResource("6_4pary")
 
-[connection signal="text_submitted" from="interface/margins/rows/input_panel/caret_space/input_line" to="." method="_on_input_line_text_submitted"]
-[connection signal="text_submitted" from="interface/margins/rows/input_panel/caret_space/input_line" to="interface/margins/rows/input_panel/caret_space/input_line" method="_on_text_submitted"]
+[node name="side_panel" parent="interface/margins/columns" instance=ExtResource("9_fwmns")]
+layout_mode = 2
+
+[connection signal="text_submitted" from="interface/margins/columns/rows/input_panel/caret_space/input_line" to="." method="_on_input_line_text_submitted"]
+[connection signal="text_submitted" from="interface/margins/columns/rows/input_panel/caret_space/input_line" to="interface/margins/columns/rows/input_panel/caret_space/input_line" method="_on_text_submitted"]

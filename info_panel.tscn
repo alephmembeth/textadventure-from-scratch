@@ -1,13 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpfj1p6jarjv2"]
 
+[ext_resource type="StyleBox" uid="uid://dxt1idi52a46f" path="res://main_panel.tres" id="1_cervl"]
 [ext_resource type="Script" path="res://info_panel.gd" id="1_hx50r"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap3o6"]
-bg_color = Color(0.372549, 0.372549, 0.372549, 1)
 
 [node name="info_panel" type="PanelContainer"]
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ap3o6")
+theme_override_styles/panel = ExtResource("1_cervl")
 script = ExtResource("1_hx50r")
 
 [node name="scroll" type="ScrollContainer" parent="."]

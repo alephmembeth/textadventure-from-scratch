@@ -34,34 +34,24 @@ func remove_item(item: Item):
 
 
 func get_full_description() -> String:
-	var area_description_string = PackedStringArray([get_area_description()])
-	
-	var npc_description_string = get_npc_description()
-	if npc_description_string != "":
-		area_description_string.append(npc_description_string)
-	
-	var item_description_string = get_item_description()
-	if item_description_string != "":
-		area_description_string.append(item_description_string)
-	
-	var exit_description_string = get_exit_description()
-	area_description_string.append(exit_description_string)
-	
-	var full_description_string = "\n".join(area_description_string)
-	return full_description_string
+	return area_description
 
 
 func get_area_description() -> String:
-	return "Location: " + Types.wrap_area_text(area_name) + "\n" + area_description
+	return area_description
 
 
-func get_npc_description() -> String:
+func get_area_name() -> String:
+	return "Location: " + Types.wrap_area_text(area_name)
+
+
+func get_character_description() -> String:
 	if characters.size() == 0:
 		return ""
 	
 	var character_description = ""
 	for character in characters:
-		character_description += character.character_name + " "
+		character_description += character.character_name + "\n"
 	return "People: " + Types.wrap_character_text(character_description)
 
 
@@ -71,13 +61,13 @@ func get_item_description() -> String:
 	
 	var item_description = ""
 	for item in items:
-		item_description += item.item_name + " "
+		item_description += item.item_name + "\n"
 	return "Items: " + Types.wrap_item_text(item_description)
 
 
 func get_exit_description() -> String:
 	var exit_description_string = PackedStringArray(exits.keys())
-	var exit_description = " ".join(exit_description_string)
+	var exit_description = "\n".join(exit_description_string)
 	return "Exits: " + Types.wrap_area_text(exit_description)
 
 
