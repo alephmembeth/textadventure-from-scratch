@@ -39,6 +39,8 @@ func process_command(input: String) -> String:
 			return talk(second_word)
 		"help":
 			return help()
+		"quit":
+			return quit()
 		_:
 			return "I don't understand that."
 
@@ -165,10 +167,15 @@ func help() -> String:
 		" – give " + Types.wrap_item_text("[item]"),
 		" – talk " + Types.wrap_character_text("[character]"),
 		" – inventory",
-		" – help"
+		" – help",
+		" – quit"
 		])
 	var help = "\n".join(help_string)
 	return help
+
+
+func quit():
+	get_tree().quit()
 
 
 func change_area(new_area: Area) -> String:
