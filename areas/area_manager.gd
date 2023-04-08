@@ -36,8 +36,8 @@ func _ready() -> void:
 	$taproom.connect_exits_unlocked("stairs", $stairs, "taproom")
 	$taproom.connect_exits_unlocked("kitchen", $kitchen, "taproom")
 	
-	$stairs.connect_exits_unlocked("downstairs", $cellar_door, "upstairs")
-	$stairs.connect_exits_unlocked("upstairs", $upstairs_hallway, "downstairs")
+	$stairs.connect_exits_unlocked("down", $cellar_door)
+	$stairs.connect_exits_unlocked("up", $upstairs_hallway)
 	
 	$cellar_door.connect_exits_unlocked("cellar", $cellar, "stairs")
 	

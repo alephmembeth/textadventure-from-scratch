@@ -52,7 +52,7 @@ func get_full_description() -> String:
 
 
 func get_area_description() -> String:
-	return "Location: " + area_name + "\n" + area_description
+	return "Location: " + Types.wrap_area_text(area_name) + "\n" + area_description
 
 
 func get_npc_description() -> String:
@@ -62,7 +62,7 @@ func get_npc_description() -> String:
 	var character_description = ""
 	for character in characters:
 		character_description += character.character_name + " "
-	return "People: " + character_description
+	return "People: " + Types.wrap_character_text(character_description)
 
 
 func get_item_description() -> String:
@@ -72,13 +72,13 @@ func get_item_description() -> String:
 	var item_description = ""
 	for item in items:
 		item_description += item.item_name + " "
-	return "Items: " + item_description
+	return "Items: " + Types.wrap_item_text(item_description)
 
 
 func get_exit_description() -> String:
 	var exit_description_string = PackedStringArray(exits.keys())
 	var exit_description = " ".join(exit_description_string)
-	return "Exits: " + exit_description
+	return "Exits: " + Types.wrap_area_text(exit_description)
 
 
 func connect_exits_unlocked(direction: String, area: Area, area_2_override = "null"):

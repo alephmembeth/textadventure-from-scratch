@@ -6,8 +6,8 @@
 
 [node name="input_response" type="MarginContainer"]
 offset_top = 94.0
-offset_right = 1.0
-offset_bottom = 94.0
+offset_right = 1150.0
+offset_bottom = 184.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 script = ExtResource("1_eb20d")

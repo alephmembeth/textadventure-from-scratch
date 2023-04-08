@@ -18,4 +18,4 @@ func get_inventory_description() -> String:
 	var item_description = ""
 	for item in inventory:
 		item_description += item.item_name + " "
-	return "Inventory: " + item_description
+	return "Inventory: " + Types.wrap_item_text(item_description)

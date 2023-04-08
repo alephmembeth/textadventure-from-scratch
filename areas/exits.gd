@@ -3,7 +3,7 @@ class_name Exits
 
 var area_1 = null
 var area_2 = null
-var area_is_locked := false 
+var area_is_locked := false
 
 
 func get_other_area(current_area):

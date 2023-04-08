@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu3cyma3vqa83"]
+[gd_scene load_steps=5 format=3 uid="uid://cu3cyma3vqa83"]
 
 [ext_resource type="FontFile" uid="uid://dsiu2symk18fd" path="res://fonts/ibm_plex_mono_regular.ttf" id="1_y754c"]
+[ext_resource type="FontFile" uid="uid://bsx8b7aupai21" path="res://fonts/ibm_plex_mono_bold.ttf" id="2_6etxo"]
+[ext_resource type="FontFile" uid="uid://g1lt78tate6n" path="res://fonts/ibm_plex_mono_italic.ttf" id="3_vfxdr"]
+[ext_resource type="FontFile" uid="uid://bp6ql1nq28ss0" path="res://fonts/ibm_plex_mono_bold_italic.ttf" id="4_hk3rx"]
 
-[node name="response" type="Label"]
-theme_override_fonts/font = ExtResource("1_y754c")
-theme_override_font_sizes/font_size = 35
+[node name="response" type="RichTextLabel"]
+offset_right = 472.0
+offset_bottom = 22.0
+theme_override_fonts/normal_font = ExtResource("1_y754c")
+theme_override_fonts/bold_font = ExtResource("2_6etxo")
+theme_override_fonts/italics_font = ExtResource("3_vfxdr")
+theme_override_fonts/bold_italics_font = ExtResource("4_hk3rx")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "This is the response text."
+fit_content = true
 autowrap_mode = 2
