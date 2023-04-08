@@ -1,5 +1,6 @@
 extends MarginContainer
 
+@onready var zebra = $zebra
 @onready var input_label = $rows/input_history
 @onready var response_label = $rows/response
 

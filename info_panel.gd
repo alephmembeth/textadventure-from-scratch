@@ -5,6 +5,8 @@ const InputResponse = preload("res://inputs/input_response.tscn")
 var max_scroll_length := 0
 @export var max_lines_remembered := 42
 
+var show_zebra := false
+
 @onready var scroll = $scroll
 @onready var scrollbar = scroll.get_v_scroll_bar()
 @onready var history = $scroll/history
@@ -42,4 +44,7 @@ func _delete_history():
 
 func _add_response(response: Control):
 	history.add_child(response)
+	if not show_zebra:
+		response.zebra.hide()
+	show_zebra = !show_zebra
 	_delete_history()
