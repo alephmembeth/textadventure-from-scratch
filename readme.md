@@ -11,3 +11,6 @@ Following Joe Bustamante’s [tutorial](https://github.com/josephmbustamante/god
 - [x] use items to unlock locked areas with a `use` command
 - [x] talk to characters with a `talk` command
 - [x] give player quest rewards
+
+Thereafter, the following features were added:
+- [x] exit the game with a `quit` command
