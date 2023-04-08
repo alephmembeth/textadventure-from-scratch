@@ -1,8 +1,8 @@
 # Textadventure from Scratch
 
-Here, using the [Godot Engine](https://github.com/godotengine) (version 4.0.1), a small textadventure is being developed from scratch with the help of Joe Bustamante’s [tutorial](https://github.com/josephmbustamante/godot-text-adventure-tutorial).
+Here, using the [Godot Engine](https://github.com/godotengine) (version 4.0.1), a small textadventure is being developed from scratch.
 
-Following the tutorial, the below-listed features are currently implemented:
+Following Joe Bustamante’s [tutorial](https://github.com/josephmbustamante/godot-text-adventure-tutorial), the below-listed features were implemented first:
 
 - [x] list available commands with a `help` command
 - [x] move between areas with a `go` command
