@@ -7,12 +7,10 @@
 [ext_resource type="Script" path="res://areas/area_manager.gd" id="3_bt8o5"]
 [ext_resource type="PackedScene" uid="uid://dkdert4e57o2t" path="res://areas/area.tscn" id="3_ivh7q"]
 [ext_resource type="Script" path="res://inputs/input_line.gd" id="6_4pary"]
+[ext_resource type="PackedScene" uid="uid://dpfj1p6jarjv2" path="res://info_panel.tscn" id="6_5aepp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri1t3"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap3o6"]
-bg_color = Color(0.372549, 0.372549, 0.372549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rxps"]
 bg_color = Color(0.372549, 0.372549, 0.372549, 1)
@@ -40,16 +38,16 @@ script = ExtResource("2_uctwy")
 script = ExtResource("3_bt8o5")
 
 [node name="behind_inn" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_top = -299.0
-offset_bottom = -99.0
+offset_top = -300.0
+offset_bottom = -100.0
 area_name = "behind an inn"
 area_description = "lorem ipsum"
 
 [node name="shed" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 288.0
-offset_top = -299.0
-offset_right = 538.0
-offset_bottom = -99.0
+offset_left = 300.0
+offset_top = -300.0
+offset_right = 550.0
+offset_bottom = -100.0
 area_name = "a shed"
 area_description = "lorem ipsum"
 
@@ -206,9 +204,7 @@ area_name = "room 3"
 area_description = "lorem ipsum"
 
 [node name="kitchen" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 2.0
 offset_top = -776.0
-offset_right = 252.0
 offset_bottom = -576.0
 area_name = "kitchen"
 area_description = "lorem ipsum"
@@ -222,10 +218,8 @@ area_name = "pantry"
 area_description = "lorem ipsum"
 
 [node name="backdoor" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 1.0
-offset_top = -539.0
-offset_right = 251.0
-offset_bottom = -339.0
+offset_top = -550.0
+offset_bottom = -400.0
 area_name = "backdoor"
 area_description = "lorem ipsum"
 
@@ -249,20 +243,8 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="info_panel" type="PanelContainer" parent="interface/margins/rows"]
+[node name="info_panel" parent="interface/margins/rows" instance=ExtResource("6_5aepp")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ap3o6")
-
-[node name="scroll" type="ScrollContainer" parent="interface/margins/rows/info_panel"]
-layout_mode = 2
-horizontal_scroll_mode = 0
-
-[node name="history" type="VBoxContainer" parent="interface/margins/rows/info_panel/scroll"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 20
 
 [node name="input_panel" type="PanelContainer" parent="interface/margins/rows"]
 custom_minimum_size = Vector2(2.08165e-12, 60)

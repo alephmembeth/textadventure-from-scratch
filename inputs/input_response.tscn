@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://c5sm3xpmbet3a"]
 
 [ext_resource type="Script" path="res://inputs/input_response.gd" id="1_eb20d"]
 [ext_resource type="PackedScene" uid="uid://n73bh1yo7omh" path="res://inputs/input_history.tscn" id="2_e3qpd"]
 [ext_resource type="PackedScene" uid="uid://cu3cyma3vqa83" path="res://inputs/response.tscn" id="3_c1y5d"]
 
-[node name="input_response" type="VBoxContainer"]
+[node name="input_response" type="MarginContainer"]
+offset_top = 94.0
+offset_right = 1.0
+offset_bottom = 94.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
 script = ExtResource("1_eb20d")
 
-[node name="input_history" parent="." instance=ExtResource("2_e3qpd")]
+[node name="rows" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="input_history" parent="rows" instance=ExtResource("2_e3qpd")]
 layout_mode = 2
 autowrap_mode = 2
 
-[node name="response" parent="." instance=ExtResource("3_c1y5d")]
+[node name="response" parent="rows" instance=ExtResource("3_c1y5d")]
 layout_mode = 2

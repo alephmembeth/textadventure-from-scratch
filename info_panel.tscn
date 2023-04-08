@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpfj1p6jarjv2"]
+
+[ext_resource type="Script" path="res://info_panel.gd" id="1_hx50r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap3o6"]
+bg_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[node name="info_panel" type="PanelContainer"]
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ap3o6")
+script = ExtResource("1_hx50r")
+
+[node name="scroll" type="ScrollContainer" parent="."]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="history" type="VBoxContainer" parent="scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
