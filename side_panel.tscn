@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://side_panel.gd" id="2_d4vln"]
 
 [node name="side_panel" type="PanelContainer"]
-custom_minimum_size = Vector2(200, 2.08165e-12)
+custom_minimum_size = Vector2(300, 2.08165e-12)
 offset_right = 250.0
 offset_bottom = 645.0
 theme_override_styles/panel = ExtResource("1_swmjg")
@@ -60,4 +60,12 @@ theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Items:
 Items"
+fit_content = true
+
+[node name="help_label" type="RichTextLabel" parent="margins/rows"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_5ub14")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Help"
 fit_content = true

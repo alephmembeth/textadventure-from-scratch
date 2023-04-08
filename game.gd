@@ -9,12 +9,12 @@ extends Control
 
 func _ready() -> void:	
 	parser.area_changed.connect(side_panel.handle_area_changed)
+	parser.area_updated.connect(side_panel.handle_area_updated)
 	
 	info_panel.create_response("Welcome to the text adventure!")
 	
 	var starting_area_response = parser.initialize(area_manager.get_child(0), player)
 	info_panel.create_response(starting_area_response)
-
 
 
 func _on_input_line_text_submitted(new_text: String) -> void:

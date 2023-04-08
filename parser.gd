@@ -1,6 +1,7 @@
 extends Node
 
-signal area_changed(new_room)
+signal area_changed(new_area)
+signal area_updated(current_area)
 
 var current_area = null
 var player = null
@@ -66,6 +67,7 @@ func take(second_word: String) -> String:
 		if second_word.to_lower() == item.item_name.to_lower():
 			current_area.remove_item(item)
 			player.take_item(item)
+			emit_signal("area_updated", current_area)
 			return "You take the " + Types.wrap_item_text(item.item_name) + "."
 	
 	return "You can't take the " + Types.wrap_item_text(second_word) + "."
@@ -79,6 +81,7 @@ func drop(second_word: String) -> String:
 		if second_word.to_lower() == item.item_name.to_lower():
 			player.drop_item(item)
 			current_area.add_item(item)
+			emit_signal("area_updated", current_area)
 			return "You drop the " + Types.wrap_item_text(item.item_name) + "."
 	
 	return "You can't drop the " + Types.wrap_item_text(second_word) + "."
@@ -154,7 +157,7 @@ func talk(second_word: String) -> String:
 
 
 func help() -> String:
-	var help_string = PackedStringArray(["You can use the following commands:",
+	var help_string = PackedStringArray(["You can use the following one- or two-word commands:",
 		" – go   " + Types.wrap_area_text("[exit]"),
 		" – take " + Types.wrap_item_text("[item]"),
 		" – drop " + Types.wrap_item_text("[item]"),
