@@ -1,3 +1,5 @@
+<img src="screen_godot.png" align="right" height="325"/>
+
 Here's a little walk through, showing how to finish the mini adventure with the least amount of moves (currently 30):
 
 - `go alley`
