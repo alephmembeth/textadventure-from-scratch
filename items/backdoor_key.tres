@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_prdf6")
-item_name = "key"
+item_name = "backdoorkey"
 item_type = 0

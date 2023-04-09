@@ -28,8 +28,7 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_5ub14")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "Location:
-Location"
+text = "Location:"
 fit_content = true
 
 [node name="exits_label" type="RichTextLabel" parent="margins/rows"]
@@ -38,8 +37,7 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_5ub14")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "Exits:
-Exits"
+text = "Exits:"
 fit_content = true
 
 [node name="characters_label" type="RichTextLabel" parent="margins/rows"]
@@ -48,8 +46,7 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_5ub14")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "Characters:
-Characters"
+text = "Characters:"
 fit_content = true
 
 [node name="items_label" type="RichTextLabel" parent="margins/rows"]
@@ -58,8 +55,7 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_5ub14")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "Items:
-Items"
+text = "Items:"
 fit_content = true
 
 [node name="help_label" type="RichTextLabel" parent="margins/rows"]

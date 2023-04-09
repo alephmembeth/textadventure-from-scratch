@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://hd8i0p2mbylt"]
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://hd8i0p2mbylt"]
 
 [ext_resource type="Script" path="res://characters/character.gd" id="1_swh6n"]
+[ext_resource type="Resource" uid="uid://hi88glcntq3i" path="res://items/coins.tres" id="1_uuw22"]
 
 [resource]
 script = ExtResource("1_swh6n")
 character_name = "innkeeper"
-initial_dialog = "Hello there!"
-follow_up_dialog = ""
+initial_dialog = "You little rascal still dare to come in here? Don't think I'll let you in your room again until you drop a few coins."
+follow_up_dialog = "Wasn't that hard, was ist? Here's the key."
+quest_item = ExtResource("1_uuw22")

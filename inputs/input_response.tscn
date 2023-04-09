@@ -27,7 +27,9 @@ layout_mode = 2
 
 [node name="input_history" parent="rows" instance=ExtResource("2_e3qpd")]
 layout_mode = 2
+text = "> This is the input history."
 autowrap_mode = 2
 
 [node name="response" parent="rows" instance=ExtResource("3_c1y5d")]
 layout_mode = 2
+text = "This is the response."

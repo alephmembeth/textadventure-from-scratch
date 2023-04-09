@@ -39,190 +39,160 @@ script = ExtResource("2_uctwy")
 script = ExtResource("3_bt8o5")
 
 [node name="behind_inn" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_top = -300.0
-offset_bottom = -100.0
-area_name = "behind an inn"
-area_description = "lorem ipsum"
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -998.0
+offset_bottom = -559.0
+grow_vertical = 2
+area_name = "backyard"
+area_description = "You are in a small backyard, surrounded by half-timbered houses. A little shed stands crooked against the wall of a house. Not far from there, a heavy door leads to the inside of another house. Cooking noises and the smell of sautéed onions come from the other side. Other than that, there's only a small alley between two houses leading out of the backyard."
 
 [node name="shed" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 300.0
-offset_top = -300.0
-offset_right = 550.0
-offset_bottom = -100.0
-area_name = "a shed"
-area_description = "lorem ipsum"
+offset_left = 320.0
+offset_top = -512.0
+offset_right = 570.0
+offset_bottom = -148.0
+area_name = "shed"
+area_description = "You are standing in a small shed, roughly assembled from boards. A few rusty old tools are stored here. The door to the backyard hangs so loosely on its hinges that you probably wouldn't have had to unlock it in the first place."
 
 [node name="city_gate" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = -1181.0
-offset_top = -1590.0
-offset_right = -931.0
-offset_bottom = -1390.0
+offset_left = -1280.0
+offset_top = -1856.0
+offset_right = -1030.0
+offset_bottom = -1656.0
 area_name = "city gate"
-area_description = "lorem ipsum"
+area_description = "Around a small bend, a large city gate appears. The gate, made from large oak boards, is still closed. A tired looking guard leans against it."
 
 [node name="street_1" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = -878.0
-offset_top = -1474.0
-offset_right = -628.0
-offset_bottom = -1274.0
-area_name = "street 1"
-area_description = "lorem ipsum"
+offset_left = -960.0
+offset_top = -1792.0
+offset_right = -710.0
+offset_bottom = -1592.0
+area_name = "street"
+area_description = "You are standing on a cobblestone road that stretches to the east and west. A little further west, the road makes a turn north."
 
 [node name="street_2" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = -579.0
-offset_top = -1479.0
-offset_right = -329.0
-offset_bottom = -1279.0
-area_name = "street 2"
-area_description = "lorem ipsum"
+offset_left = -640.0
+offset_top = -1792.0
+offset_right = -390.0
+offset_bottom = -1592.0
+area_name = "street"
+area_description = "You are standing on a cobblestone road that stretches to the east and west. Not far to the west, the road makes a turn north."
 
 [node name="street_3" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = -289.0
-offset_top = -1478.0
-offset_right = -39.0
-offset_bottom = -1278.0
-area_name = "street 3"
-area_description = "lorem ipsum"
+offset_left = -320.0
+offset_top = -1792.0
+offset_right = -70.0
+offset_bottom = -1428.0
+area_name = "street"
+area_description = "You are standing on a cobblestone road that stretches to the east and west. Two-story houses stand tightly against each other on both sides. Not even a rat could squeeze between some of them. Most of the wooden shutters are still closed. Here, too, it stinks of garbage and urine."
 
 [node name="street_4" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 1.0
-offset_top = -1481.0
-offset_right = 251.0
-offset_bottom = -1281.0
-area_name = "street 4"
-area_description = "lorem ipsum"
+offset_top = -1792.0
+offset_bottom = -1453.0
+area_name = "street"
+area_description = "You are standing on a cobblestone road that stretches to the east and west. On the side from which the alley led you to the street, there's the door to an inn. A sign dangling above the door shows a boar walking on two legs, holding a mug."
 
 [node name="street_5" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 308.0
-offset_top = -1488.0
-offset_right = 558.0
-offset_bottom = -1288.0
-area_name = "street 5"
-area_description = "lorem ipsum"
+offset_left = 320.0
+offset_top = -1792.0
+offset_right = 570.0
+offset_bottom = -1592.0
+area_name = "street"
+area_description = "You are standing on a cobblestone road that stretches to the east and west. To the east, the road makes a turn south."
 
 [node name="street_6" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 638.0
-offset_top = -1490.0
-offset_right = 888.0
-offset_bottom = -1290.0
-area_name = "street 6"
-area_description = "lorem ipsum"
+offset_left = 640.0
+offset_top = -1792.0
+offset_right = 890.0
+offset_bottom = -1592.0
+area_name = "street"
+area_description = "You are standing on a cobblestone road that stretches to the east and west. Not far to the east, the road makes a turn south."
 
 [node name="street_7" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 946.0
-offset_top = -1495.0
-offset_right = 1196.0
-offset_bottom = -1295.0
-area_name = "street 7"
-area_description = "lorem ipsum"
+offset_left = 960.0
+offset_top = -1792.0
+offset_right = 1210.0
+offset_bottom = -1592.0
+area_name = "street"
+area_description = "You are standing on a cobblestone road that stretches to the east and west. A little further east, the road makes a turn south."
 
 [node name="street_8" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 1284.0
-offset_top = -1432.0
-offset_right = 1534.0
-offset_bottom = -1232.0
-area_name = "street 8"
-area_description = "lorem ipsum"
-
-[node name="inn_door" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 2.0
-offset_top = -1248.0
-offset_right = 252.0
-offset_bottom = -1048.0
-area_name = "inn door"
-area_description = "lorem ipsum"
+offset_left = 1280.0
+offset_top = -1728.0
+offset_right = 1530.0
+offset_bottom = -1528.0
+area_name = "street"
+area_description = "Around a small bend, you see a group of ruffians. You do not dare to pass them, let alone talk to them."
 
 [node name="taproom" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 1.0
-offset_top = -1015.0
-offset_right = 251.0
-offset_bottom = -815.0
+offset_top = -1408.0
+offset_bottom = -919.0
 area_name = "taproom"
-area_description = "lorem ipsum"
+area_description = "You are standing in a gloomy taproom. Hardly any light enters through the small windows; a few lanterns dangle from the ceiling, their light barely reaching the ground. Behind a wooden counter, the innkeeper sorts some mugs into a shelf on the wall. On one side of the room, there are stairs. Opposite the entrance, a door leads to the back of the building. Cooking noises and the smell of sautéed onions come from the other side."
 
 [node name="stairs" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 306.0
-offset_top = -1013.0
-offset_right = 556.0
-offset_bottom = -813.0
+offset_left = 320.0
+offset_top = -1408.0
+offset_right = 570.0
+offset_bottom = -1208.0
 area_name = "stairs"
-area_description = "lorem ipsum"
-
-[node name="cellar_door" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 650.0
-offset_top = -1160.0
-offset_right = 900.0
-offset_bottom = -960.0
-area_name = "cellar door"
-area_description = "lorem ipsum"
+area_description = "You are standing at a staircase. On one side, stone steps lead to the cellar. On the other side, a wooden staircase winds its way up."
 
 [node name="cellar" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 936.0
-offset_top = -1168.0
-offset_right = 1186.0
-offset_bottom = -968.0
+offset_left = 640.0
+offset_top = -1408.0
+offset_right = 890.0
+offset_bottom = -1208.0
 area_name = "cellar"
-area_description = "lorem ipsum"
+area_description = "It's dark in the cellar. You can't see your hand in front of your eyes. From a corner. you hear a squeak."
 
 [node name="upstairs_hallway" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 641.0
-offset_top = -912.0
-offset_right = 891.0
-offset_bottom = -712.0
+offset_left = 640.0
+offset_top = -1152.0
+offset_right = 890.0
+offset_bottom = -938.0
 area_name = "upstairs hallway"
-area_description = "lorem ipsum"
+area_description = "You are standing in the upstairs hallway. A lantern provides meager light. Two doors lead off from here, one to the left and one to the right."
 
 [node name="room_1" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 937.0
-offset_top = -902.0
-offset_right = 1187.0
-offset_bottom = -702.0
-area_name = "room 1"
-area_description = "lorem ipsum"
+offset_left = 960.0
+offset_top = -1152.0
+offset_right = 1210.0
+offset_bottom = -938.0
+area_name = "chamber"
+area_description = "You are standing in a small chamber. Little light falls through a small window onto the dirty floor. An old man is snoring peacefully on a straw sack."
 
 [node name="room_2" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 939.0
-offset_top = -655.0
-offset_right = 1189.0
-offset_bottom = -455.0
-area_name = "room 2"
-area_description = "lorem ipsum"
+offset_left = 640.0
+offset_top = -896.0
+offset_right = 890.0
+offset_bottom = -696.0
+area_name = "chamber"
+area_description = "This is it, this is your room. Finally. In one corner, there's a wooden bed. It looks endlessly inviting. Time to go to bed."
 
 [node name="bed" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 1240.0
-offset_top = -657.0
-offset_right = 1490.0
-offset_bottom = -457.0
+offset_left = 960.0
+offset_top = -896.0
+offset_right = 1210.0
+offset_bottom = -696.0
 area_name = "bed"
-area_description = "lorem ipsum"
-
-[node name="room_3" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 636.0
-offset_top = -661.0
-offset_right = 886.0
-offset_bottom = -461.0
-area_name = "room 3"
-area_description = "lorem ipsum"
+area_description = "You made it. You found your way to your bed. \"What a night, and what a morning\", you think to yourself as your eyes finally fall shut again..."
 
 [node name="kitchen" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_top = -776.0
-offset_bottom = -576.0
+offset_top = -896.0
+offset_bottom = -557.0
 area_name = "kitchen"
-area_description = "lorem ipsum"
+area_description = "You are standing in a small kitchen. The air is warm and thick. At a fireplace, the cook stands bent over a large pot. Dried herbs, onions, garlic and sausages dangle from the ceiling. Three doors lead out of the kitchen, into the taproom, a pantry, and the backyard."
 
 [node name="pantry" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_left = 306.0
-offset_top = -776.0
-offset_right = 556.0
-offset_bottom = -576.0
+offset_left = 320.0
+offset_top = -896.0
+offset_right = 570.0
+offset_bottom = -696.0
 area_name = "pantry"
-area_description = "lorem ipsum"
-
-[node name="backdoor" parent="area_manager" instance=ExtResource("3_ivh7q")]
-offset_top = -550.0
-offset_bottom = -400.0
-area_name = "backdoor"
-area_description = "lorem ipsum"
+area_description = "You are standing in a small pantry, barely one meter by one meter. Countless groceries are piled up on shelves on the walls."
 
 [node name="interface" type="PanelContainer" parent="."]
 layout_mode = 1

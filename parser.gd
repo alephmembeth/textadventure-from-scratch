@@ -105,7 +105,7 @@ func use(second_word: String) -> String:
 						if exit == item.use_value:
 							exit.area_is_locked = false
 							player.drop_item(item)
-							return "You unlock the door with the " + Types.wrap_item_text(item.item_name) + "and can now go to" + Types.wrap_area_text(exit.get_other_area(current_area).area_name) + "."
+							return "You unlock the door with the " + Types.wrap_item_text(item.item_name) + " and can now go to " + Types.wrap_area_text(exit.get_other_area(current_area).area_name) + "."
 					return "That item does not unlock anything here."
 				_:
 					return "Tried to use item with invalid item type."
@@ -136,7 +136,7 @@ func give(second_word: String) -> String:
 				var reward = character.quest_reward
 				if "is_locked" in reward:
 					reward.is_locked = false
-				elif "key" in reward:
+				elif "key" or "coins" in reward:
 					player.take_item(reward)
 				else:
 					printerr("Quest reward is not defined.")

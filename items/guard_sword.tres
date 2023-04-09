@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_fyyhf")
 item_name = "sword"
-item_type = 0
+item_type = 1

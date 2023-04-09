@@ -23,3 +23,7 @@ Types="*res://globals/types.gd"
 
 window/size/viewport_width=1728
 window/size/viewport_height=972
+
+[rendering]
+
+textures/vram_compression/import_s3tc_bptc=true

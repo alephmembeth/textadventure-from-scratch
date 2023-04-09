@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_ie2pp")
-item_name = "key"
+item_name = "shedkey"
 item_type = 0

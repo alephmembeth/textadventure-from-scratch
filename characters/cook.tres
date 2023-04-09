@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_21kpj")
 character_name = "cook"
-initial_dialog = "What are you doin' in my kitchen?"
+initial_dialog = "Whada ye doin' in me kitchen? Keep ya fingers out'a me pots!"
 follow_up_dialog = ""
