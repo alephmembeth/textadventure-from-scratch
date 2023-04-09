@@ -1,5 +1,7 @@
 # Textadventure from Scratch
 
+<img src="walkthrough/screen_game.png" align="right" height="325"/>
+
 Here, using the [Godot Engine](https://github.com/godotengine) (version 4.0.1), a small textadventure is being developed from scratch.
 
 Following Joe Bustamante’s [tutorial](https://github.com/josephmbustamante/godot-text-adventure-tutorial), the below-listed features were implemented first:
