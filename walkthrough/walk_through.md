@@ -32,3 +32,7 @@ Here's a little walk through, showing how to finish the mini adventure with the 
 - `use roomkey`
 - `go right`
 - `go bed`
+
+Also, here's a map of the area:
+
+<img src="map.png" align="left" height="325"/>
