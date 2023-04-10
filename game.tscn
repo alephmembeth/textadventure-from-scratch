@@ -146,7 +146,7 @@ offset_top = -1408.0
 offset_right = 890.0
 offset_bottom = -1208.0
 area_name = "cellar"
-area_description = "It's dark in the cellar. You can't see your hand in front of your eyes. From a corner. you hear a squeak."
+area_description = "It's dark in the cellar. You can't see your hand in front of your eyes. From a corner, you hear a squeak."
 
 [node name="upstairs_hallway" parent="area_manager" instance=ExtResource("3_ivh7q")]
 offset_left = 640.0
