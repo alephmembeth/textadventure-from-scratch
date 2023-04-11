@@ -16,3 +16,4 @@ Following Joe Bustamante’s [tutorial](https://github.com/josephmbustamante/god
 
 Thereafter, the following features were added:
 - [x] exit the game with a `quit` command
+- [x] show information about the game with a `gameinfo` command
