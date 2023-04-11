@@ -41,6 +41,8 @@ func process_command(input: String) -> String:
 			return help()
 		"quit":
 			return quit()
+		"gameinfo":
+			return gameinfo()
 		_:
 			return "I don't understand that."
 
@@ -168,7 +170,8 @@ func help() -> String:
 		" – talk " + Types.wrap_character_text("[character]"),
 		" – inventory",
 		" – help",
-		" – quit"
+		" – quit",
+		" – gameinfo"
 		])
 	var help = "\n".join(help_string)
 	return help
@@ -176,6 +179,10 @@ func help() -> String:
 
 func quit():
 	get_tree().quit()
+
+
+func gameinfo():
+	return "For more information about this game, visit https://github.com/alephmembeth/textadventure-from-scratch/"
 
 
 func change_area(new_area: Area) -> String:
