@@ -169,7 +169,7 @@ func talk(second_word: String) -> String:
 
 
 func help() -> String:
-	var help_string = PackedStringArray(["You can use the following one- or two-word commands:",
+	var help_string = PackedStringArray(["You can use the following commands:",
 		" – go   " + Types.wrap_area_text("[exit]"),
 		" – take " + Types.wrap_item_text("[item]"),
 		" – drop " + Types.wrap_item_text("[item]"),
