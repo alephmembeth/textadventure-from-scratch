@@ -15,20 +15,24 @@ func initialize(starting_area, player) -> String:
 func process_command(input: String) -> String:
 	var words = input.split(" ", false)
 	
-	if words.size() == 0:
-		return "No words were parsed."
-	
 	var first_word = words[0].to_lower()
 	var second_word = ""
 	
-	if words.size() == 1:
-		second_word = words[1].to_lower()
+	if words.size() == 0:
+		return "No words were parsed."
+	
+	elif words.size() == 1:
+		second_word == ""
 	
 	elif words.size() == 2:
-		second_word = words[2].to_lower()
+		second_word = words[1].to_lower()
 	
+	elif words.size() == 3:
+		second_word = words[-1].to_lower()
+		
 	elif words.size() > 3:
-		second_word = words[3].to_lower()
+		second_word = words[-1].to_lower()
+	
 	
 	match first_word:
 		"go":
