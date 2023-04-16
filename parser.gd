@@ -24,15 +24,8 @@ func process_command(input: String) -> String:
 	elif words.size() == 1:
 		second_word == ""
 	
-	elif words.size() == 2:
-		second_word = words[1].to_lower()
-	
-	elif words.size() == 3:
+	else:
 		second_word = words[-1].to_lower()
-		
-	elif words.size() > 3:
-		second_word = words[-1].to_lower()
-	
 	
 	match first_word:
 		"go":
