@@ -11,7 +11,7 @@ func _ready() -> void:
 	parser.area_changed.connect(side_panel.handle_area_changed)
 	parser.area_updated.connect(side_panel.handle_area_updated)
 	
-	info_panel.create_response("You wake up in a stinking dung heap. Also, you feel like a stinking dung heap. Your head is pounding. Your limbs ache. There's this unquenchable thirst. And although the sky is cloudy, the sun shines far too brightly. A rooster crows in the distance. It's really time to go to bed.")
+	info_panel.create_response("Welcome to [color=orange]Deep Dark Dungeons of Doom[/color] (v0.0.1-alpha)!\n(Important disclaimer: There are currently no deep dark dungeons in the game.)\n\nYou wake up in a stinking dung heap. Also, you feel like a stinking dung heap. Your head is pounding. Your limbs ache. There's this unquenchable thirst. And although the sky is cloudy, the sun shines far too brightly. A rooster crows in the distance. It's really time to go to bed.")
 	
 	var starting_area_response = parser.initialize(area_manager.get_child(0), player)
 	info_panel.create_response(starting_area_response)

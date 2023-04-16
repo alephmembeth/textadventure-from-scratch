@@ -1,4 +1,4 @@
-# Textadventure from Scratch
+# Deep Dark Dungeons of Doom[^1]
 
 <img src="walkthrough/screen_game.png" align="right" height="325"/>
 
@@ -17,3 +17,5 @@ Following Joe Bustamante’s [tutorial](https://github.com/josephmbustamante/god
 Thereafter, the following features were added:
 - [x] exit the game with a `quit` command
 - [x] show information about the game with a `gameinfo` command
+
+[^1]: Important disclaimer: There are currently no deep dark dungeons in the game.

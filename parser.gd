@@ -187,7 +187,7 @@ func quit():
 
 
 func gameinfo():
-	return "For more information about this game, visit https://github.com/alephmembeth/textadventure-from-scratch/"
+	return "[color=orange]Deep Dark Dungeons of Doom[/color] (v.0.0.1-alpha). For more information about the game, visit https://github.com/alephmembeth/textadventure-from-scratch/"
 
 
 func change_area(new_area: Area) -> String:
